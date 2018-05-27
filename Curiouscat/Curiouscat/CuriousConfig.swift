@@ -13,9 +13,11 @@ public class CuriousConfig {
     
     public enum PageType: Int {
         case githubMarkdown
+        case githubCode
         case other
     }
     
+    /// 根据类型获取注入 js 脚本
     static func loadUserScript(with type: PageType) -> WKUserScript? {
         guard let path = Bundle.main.path(forResource: type.scriptName, ofType: "js") else {
             return nil
@@ -30,6 +32,14 @@ public class CuriousConfig {
             print("Cannot load file")
             return nil
         }
+    }
+    
+    /// 根据 URL 判断 PageType
+    static func getUrlType(with url: String) -> PageType {
+        if url.hasPrefix("https://github.com") && url.hasSuffix(".md") {
+            return .githubMarkdown
+        }
+        return .other
     }
 }
 

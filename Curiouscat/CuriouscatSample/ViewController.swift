@@ -14,7 +14,7 @@ import SnapKit
 class ViewController: UIViewController {
     
     lazy private var demoWebView: CuriousWebView = {
-        return CuriousWebView.init(type: .githubMarkdown, url: "https://github.com/tid-kijyun/Kanna/blob/master/README.md")
+        return CuriousWebView.init(type: .githubMarkdown, url: "https://github.com/Desgard/iOS-Source-Probe/blob/master/README.md")
     }()
 
     override func viewDidLoad() {

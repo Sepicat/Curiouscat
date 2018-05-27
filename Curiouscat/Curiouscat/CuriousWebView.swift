@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 import SnapKit
+import KVOController
 
 public class CuriousWebView: UIView {
     
@@ -31,6 +32,7 @@ public class CuriousWebView: UIView {
         wkConfig.preferences = wkPreferences
 
         var webView = WKWebView.init(frame: .zero, configuration: wkConfig)
+        webView.navigationDelegate = self
         return webView
     }()
     
@@ -38,6 +40,7 @@ public class CuriousWebView: UIView {
     lazy private var progressView: UIProgressView = {
         var progressView = UIProgressView()
         progressView.backgroundColor = .blue
+        progressView.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.5)
         return progressView
     }()
     
@@ -61,12 +64,24 @@ public class CuriousWebView: UIView {
 
     private func initialViews() {
         addSubview(webView)
+        addSubview(progressView)
         
+        kvoController.observe(webView, keyPath: "estimatedProgress", options: .new) {
+            _, _, _ in
+            let progress = self.webView.estimatedProgress
+            self.progressView.progress = Float(progress)
+        }
     }
     
     private func initialLayouts() {
         webView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        
+        progressView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(64)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(2)
         }
     }
 
@@ -76,6 +91,7 @@ public class CuriousWebView: UIView {
     }
 }
 
+// MARK: - API
 extension CuriousWebView {
     
     public func load() {
@@ -86,5 +102,36 @@ extension CuriousWebView {
     
     public func reload() {
         webView.reload()
+    }
+    
+    public func back() {
+        webView.goBack()
+    }
+    
+    public func forward() {
+        webView.goForward()
+    }
+    
+    public var canBack: Bool {
+        get {
+            return webView.canGoBack
+        }
+    }
+    
+    public var canForward: Bool {
+        get {
+            return webView.canGoForward
+        }
+    }
+}
+
+extension CuriousWebView: WKNavigationDelegate {
+    public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        if let urlText = webView.url?.absoluteString,
+            CuriousConfig.getUrlType(with: urlText) == pageType {
+            print("Go to: \(urlText)")
+        } else {
+            webView.stopLoading()
+        }
     }
 }
