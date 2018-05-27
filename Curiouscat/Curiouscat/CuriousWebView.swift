@@ -16,6 +16,8 @@ public class CuriousWebView: UIView {
     private(set) var pageType: CuriousConfig.PageType
     private(set) var rootUrl: String
     
+    public var clickOtherLinks: ((CuriousConfig.PageType) -> Void) = { _ in }
+    
     lazy private var webView: WKWebView = {
         let wkConfig = WKWebViewConfiguration()
         
@@ -100,38 +102,34 @@ extension CuriousWebView {
         }
     }
     
-    public func reload() {
-        webView.reload()
-    }
+    public func reload() { webView.reload() }
     
-    public func back() {
-        webView.goBack()
-    }
+    public func back() { webView.goBack() }
     
-    public func forward() {
-        webView.goForward()
-    }
+    public func forward() { webView.goForward() }
     
     public var canBack: Bool {
-        get {
-            return webView.canGoBack
-        }
+        get { return webView.canGoBack }
     }
     
     public var canForward: Bool {
-        get {
-            return webView.canGoForward
-        }
+        get { return webView.canGoForward }
     }
 }
 
 extension CuriousWebView: WKNavigationDelegate {
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        if let urlText = webView.url?.absoluteString,
-            CuriousConfig.getUrlType(with: urlText) == pageType {
+        guard let urlText = webView.url?.absoluteString else {
+            clickOtherLinks(.other)
+            webView.stopLoading()
+            return
+        }
+        let linkPageType = CuriousConfig.getUrlType(with: urlText)
+        if linkPageType == pageType {
             print("Go to: \(urlText)")
         } else {
             webView.stopLoading()
+            clickOtherLinks(linkPageType)
         }
     }
 }
