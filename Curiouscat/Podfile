@@ -1,0 +1,15 @@
+platform :ios, '10.0'
+use_frameworks!
+inhibit_all_warnings!
+
+target 'Curiouscat' do
+    pod 'Alamofire', '~> 4.5'
+    pod 'Kanna', '~> 4.0.0'
+    pod 'SnapKit', '~> 4.0.0'
+end
+
+target 'CuriouscatSample' do
+    pod 'Kanna', '~> 4.0.0'
+    pod 'Alamofire', '~> 4.5'
+    pod 'SnapKit', '~> 4.0.0'
+end
