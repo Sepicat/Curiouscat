@@ -36,7 +36,8 @@ public class CuriousConfig {
     
     /// 根据 URL 判断 PageType
     static func getUrlType(with url: String) -> PageType {
-        if url.hasPrefix("https://github.com") && url.hasSuffix(".md") {
+        if url.hasPrefix("https://github.com")
+            && (url.hasSuffix(".md") || url.hasSuffix(".markdowm")) {
             return .githubMarkdown
         }
         return .other
