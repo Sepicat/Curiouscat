@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15B586D60ADF68ECD9DFB2B9 /* Pods_CuriouscatSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8468C260C04ECCBDE779F12 /* Pods_CuriouscatSample.framework */; };
-		AE76E015C361847F884316A0 /* Pods_Curiouscat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61DFB428665FA21F91B412A /* Pods_Curiouscat.framework */; };
+		5CDEF33750D0D94C6D629325 /* Pods_CuriouscatSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8468C260C04ECCBDE779F12 /* Pods_CuriouscatSample.framework */; };
+		8417708C20DB6B3100174F90 /* Curiouscat.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D5B69BC220B942670092BD82 /* Curiouscat.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AE76E015C361847F884316A0 /* Pods_Curiouscat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61DFB428665FA21F91B412A /* Pods_Curiouscat.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		D5B69BC720B942670092BD82 /* Curiouscat.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B69BC520B942670092BD82 /* Curiouscat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5B69BD420B943D40092BD82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B69BD320B943D40092BD82 /* AppDelegate.swift */; };
 		D5B69BD620B943D40092BD82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B69BD520B943D40092BD82 /* ViewController.swift */; };
@@ -19,6 +20,29 @@
 		D5B69BE920B993E50092BD82 /* CuriousConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B69BE820B993E50092BD82 /* CuriousConfig.swift */; };
 		D5B69BEA20BA42A40092BD82 /* github-markdown.js in Resources */ = {isa = PBXBuildFile; fileRef = D5B69BE320B98C580092BD82 /* github-markdown.js */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8417708D20DB6F4F00174F90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5B69BB920B942670092BD82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5B69BC120B942670092BD82;
+			remoteInfo = Curiouscat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8417708B20DB6B2100174F90 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8417708C20DB6B3100174F90 /* Curiouscat.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		06999B8FAA3A01D01E956490 /* Pods-CuriouscatSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuriouscatSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CuriouscatSample/Pods-CuriouscatSample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -55,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15B586D60ADF68ECD9DFB2B9 /* Pods_CuriouscatSample.framework in Frameworks */,
+				5CDEF33750D0D94C6D629325 /* Pods_CuriouscatSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +182,7 @@
 				D5B69BBE20B942670092BD82 /* Frameworks */,
 				D5B69BBF20B942670092BD82 /* Headers */,
 				D5B69BC020B942670092BD82 /* Resources */,
+				53682B5088D5A3E4D2ACE262 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,10 +202,13 @@
 				D5B69BCE20B943D40092BD82 /* Frameworks */,
 				D5B69BCF20B943D40092BD82 /* Resources */,
 				5AC8FC6DFC198EAC36182A4A /* [CP] Embed Pods Frameworks */,
+				97B8B0D893F4572453C56268 /* [CP] Copy Pods Resources */,
+				8417708B20DB6B2100174F90 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8417708E20DB6F4F00174F90 /* PBXTargetDependency */,
 			);
 			name = CuriouscatSample;
 			productName = CuriouscatSample;
@@ -283,6 +311,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		53682B5088D5A3E4D2ACE262 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Curiouscat/Pods-Curiouscat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5AC8FC6DFC198EAC36182A4A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,6 +350,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CuriouscatSample/Pods-CuriouscatSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		97B8B0D893F4572453C56268 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CuriouscatSample/Pods-CuriouscatSample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -329,6 +387,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8417708E20DB6F4F00174F90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5B69BC120B942670092BD82 /* Curiouscat */;
+			targetProxy = 8417708D20DB6F4F00174F90 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D5B69BD720B943D40092BD82 /* Main.storyboard */ = {
