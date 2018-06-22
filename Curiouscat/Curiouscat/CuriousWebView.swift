@@ -14,9 +14,20 @@ import KVOController
 public class CuriousWebView: UIView {
     
     private(set) var pageType: CuriousConfig.PageType
+    
     private(set) var rootUrl: String
     
-    public var clickOtherLinks: ((CuriousConfig.PageType) -> Void) = { _ in }
+    private let eps: Double = 1e-4
+
+    /// 点击非同类链接回调
+    public var clickOtherLinks: ((CuriousConfig.PageType, String) -> Void) = { _,_ in }
+    
+    /// 进度条颜色
+    public var progressTintColor: UIColor = UIColor.blue {
+        didSet {
+            progressView.backgroundColor = progressTintColor
+        }
+    }
     
     lazy private var webView: WKWebView = {
         let wkConfig = WKWebViewConfiguration()
@@ -41,7 +52,7 @@ public class CuriousWebView: UIView {
     
     lazy private var progressView: UIProgressView = {
         var progressView = UIProgressView()
-        progressView.backgroundColor = .blue
+        progressView.backgroundColor = progressTintColor
         progressView.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.5)
         return progressView
     }()
@@ -72,6 +83,15 @@ public class CuriousWebView: UIView {
             _, _, _ in
             let progress = self.webView.estimatedProgress
             self.progressView.progress = Float(progress)
+            if fabs(Double(progress) - 1) < self.eps {
+                UIView.animate(withDuration: 0.2) {
+                    self.progressView.alpha = 0
+                }
+            } else {
+                UIView.animate(withDuration: 0.2) {
+                    self.progressView.alpha = 1
+                }
+            }
         }
     }
     
@@ -120,7 +140,7 @@ extension CuriousWebView {
 extension CuriousWebView: WKNavigationDelegate {
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         guard let urlText = webView.url?.absoluteString else {
-            clickOtherLinks(.other)
+            clickOtherLinks(.other, "")
             webView.stopLoading()
             return
         }
@@ -129,7 +149,7 @@ extension CuriousWebView: WKNavigationDelegate {
             print("Go to: \(urlText)")
         } else {
             webView.stopLoading()
-            clickOtherLinks(linkPageType)
+            clickOtherLinks(linkPageType, urlText)
         }
     }
 }

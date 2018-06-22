@@ -26,7 +26,6 @@ public class CuriousConfig {
         do {
             let script = try String(contentsOfFile: path, encoding: .utf8)
             return WKUserScript(source: script, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-            
         }
         catch {
             print("Cannot load file")
