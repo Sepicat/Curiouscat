@@ -24,12 +24,14 @@ class ViewController: UIViewController {
     }
     
     private func initialViews() {
+        view.backgroundColor = .red
         demoWebView.frame = view.bounds
         view.addSubview(demoWebView)
     }
     private func initialLayouts() {
         demoWebView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.left.top.equalToSuperview().offset(20)
+            make.right.bottom.equalToSuperview().offset(-20)
         }
         
         demoWebView.reload()

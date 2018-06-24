@@ -101,7 +101,7 @@ public class CuriousWebView: UIView {
         }
         
         progressView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(64)
+            make.top.equalToSuperview()
             make.left.right.equalToSuperview()
             make.height.equalTo(2)
         }
