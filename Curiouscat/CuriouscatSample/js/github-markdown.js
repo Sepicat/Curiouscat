@@ -14,3 +14,6 @@ var titleLabel = document.getElementsByClassName("breadcrumb blob-breadcrumb")[0
 var parentTitleLabel = titleLabel.parentElement;
 parentTitleLabel.removeChild(titleLabel);
 
+// Style 样式修改
+document.body.style.background = "#3C3836"
+document.body.style.color = "#d5c4a1"
