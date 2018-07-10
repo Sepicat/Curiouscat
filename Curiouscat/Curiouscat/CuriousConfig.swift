@@ -17,6 +17,12 @@ public class CuriousConfig {
         case other
     }
     
+    public struct Colors {
+        public var backColor: UIColor
+        public var textShowColor: UIColor
+        public var textLinkColor: UIColor
+    }
+    
     /// 根据类型获取注入 js 脚本
     static func loadUserScript(with type: PageType) -> WKUserScript? {
         guard let path = Bundle.main.path(forResource: type.scriptName, ofType: "js") else {
@@ -24,7 +30,8 @@ public class CuriousConfig {
         }
         
         do {
-            let script = try String(contentsOfFile: path, encoding: .utf8)
+            let scriptTemplete = try String(contentsOfFile: path, encoding: .utf8)
+            let script = String(format: scriptTemplete, "#3C3836", "#d5c4a1", "#b8bb26")
             return WKUserScript(source: script, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
         }
         catch {

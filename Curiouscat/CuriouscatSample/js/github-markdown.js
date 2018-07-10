@@ -15,5 +15,14 @@ var parentTitleLabel = titleLabel.parentElement;
 parentTitleLabel.removeChild(titleLabel);
 
 // Style 样式修改
-document.body.style.background = "#3C3836"
-document.body.style.color = "#d5c4a1"
+/// 常规
+document.body.style.background = "%@"; // "#3C3836"
+document.body.style.color = "%@"; // #d5c4a1"
+
+/// a 标签
+var as = document.getElementsByTagName("a");
+for (var i = 0; i < as.length; ++ i) {
+    as[i].style.color = "%@"; // #b8bb26
+}
+
+/// 
