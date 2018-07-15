@@ -22,6 +22,9 @@ public class CuriousWebView: UIView {
     /// 点击非同类链接回调
     public var clickOtherLinks: ((CuriousConfig.PageType, String) -> Void) = { _,_ in }
     
+    /// 加载完之后带高度的回调
+    public var loadEndCallback: (Float) -> Void = { _ in }
+    
     /// 进度条颜色
     public var progressTintColor: UIColor = UIColor.blue {
         didSet {
@@ -137,6 +140,7 @@ extension CuriousWebView {
     }
 }
 
+// MARK: - WKNavigationDelegate
 extension CuriousWebView: WKNavigationDelegate {
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         guard let urlText = webView.url?.absoluteString else {
@@ -150,6 +154,15 @@ extension CuriousWebView: WKNavigationDelegate {
         } else {
             webView.stopLoading()
             clickOtherLinks(linkPageType, urlText)
+        }
+    }
+    
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.evaluateJavaScript("document.body.scrollHeight") { height, _ in
+            if let height: Float = height as? Float {
+                print("height: \(height)")
+                self.loadEndCallback(height)
+            }
         }
     }
 }

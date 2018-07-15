@@ -17,21 +17,33 @@ public class CuriousConfig {
         case other
     }
     
-    public struct Colors {
-        public var backColor: UIColor
-        public var textShowColor: UIColor
-        public var textLinkColor: UIColor
+    public class Colors {
+        static var backColor: UIColor = UIColor(rgbString: "#3C3836")
+        static var textShowColor: UIColor = UIColor(rgbString: "#d5c4a1")
+        static var textLinkColor: UIColor = UIColor(rgbString: "#b8bb26")
+        static var textBlockQuoteColor: UIColor = UIColor(rgbString: "#d5c4a1")
     }
+    
+    static let shared: CuriousConfig = CuriousConfig()
     
     /// 根据类型获取注入 js 脚本
     static func loadUserScript(with type: PageType) -> WKUserScript? {
-        guard let path = Bundle.main.path(forResource: type.scriptName, ofType: "js") else {
+        let bundle = Bundle(for: CuriousConfig.self)
+        guard let path = bundle.path(forResource: type.scriptName, ofType: "js") else {
             return nil
         }
-        
+
         do {
             let scriptTemplete = try String(contentsOfFile: path, encoding: .utf8)
-            let script = String(format: scriptTemplete, "#3C3836", "#d5c4a1")
+            
+            print(Colors.backColor.r(), Colors.backColor.g(), Colors.backColor.b())
+            
+            let script = String(format: scriptTemplete,
+                                Colors.backColor.hex(),
+                                Colors.textShowColor.hex(),
+                                Colors.textLinkColor.hex(),
+                                Colors.textBlockQuoteColor.hex())
+            
             return WKUserScript(source: script, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
         }
         catch {
