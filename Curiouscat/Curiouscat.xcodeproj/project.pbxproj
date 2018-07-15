@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5CDEF33750D0D94C6D629325 /* Pods_CuriouscatSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8468C260C04ECCBDE779F12 /* Pods_CuriouscatSample.framework */; };
 		8417708C20DB6B3100174F90 /* Curiouscat.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D5B69BC220B942670092BD82 /* Curiouscat.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84AF6F2B20FB0FD7004F918E /* github-markdown.js in Resources */ = {isa = PBXBuildFile; fileRef = 84AF6F2A20FB0FD7004F918E /* github-markdown.js */; };
 		AE76E015C361847F884316A0 /* Pods_Curiouscat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61DFB428665FA21F91B412A /* Pods_Curiouscat.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		D50B87F320FADC58007FB840 /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50B87F220FADC58007FB840 /* UIColor+Helper.swift */; };
 		D50B87F520FAE4BB007FB840 /* github-markdown.js in Resources */ = {isa = PBXBuildFile; fileRef = D50B87F420FAE4BA007FB840 /* github-markdown.js */; };
@@ -50,6 +51,7 @@
 		25FC457EACA93D014DC78A31 /* Pods-Curiouscat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Curiouscat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Curiouscat/Pods-Curiouscat.debug.xcconfig"; sourceTree = "<group>"; };
 		4083EBA5F730AF7EE6C2576D /* Pods-CuriouscatSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuriouscatSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CuriouscatSample/Pods-CuriouscatSample.release.xcconfig"; sourceTree = "<group>"; };
 		5BA4929D5B49047C6FCB96BE /* Pods-Curiouscat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Curiouscat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Curiouscat/Pods-Curiouscat.release.xcconfig"; sourceTree = "<group>"; };
+		84AF6F2A20FB0FD7004F918E /* github-markdown.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "github-markdown.js"; sourceTree = "<group>"; };
 		C61DFB428665FA21F91B412A /* Pods_Curiouscat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Curiouscat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D50B87F220FADC58007FB840 /* UIColor+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helper.swift"; sourceTree = "<group>"; };
 		D50B87F420FAE4BA007FB840 /* github-markdown.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "github-markdown.js"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		D5B69BD220B943D40092BD82 /* CuriouscatSample */ = {
 			isa = PBXGroup;
 			children = (
+				84AF6F2A20FB0FD7004F918E /* github-markdown.js */,
 				D5B69BD320B943D40092BD82 /* AppDelegate.swift */,
 				D5B69BD520B943D40092BD82 /* ViewController.swift */,
 				D5B69BD720B943D40092BD82 /* Main.storyboard */,
@@ -278,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84AF6F2B20FB0FD7004F918E /* github-markdown.js in Resources */,
 				D5B69BDE20B943D60092BD82 /* LaunchScreen.storyboard in Resources */,
 				D5B69BDB20B943D60092BD82 /* Assets.xcassets in Resources */,
 				D5B69BD920B943D40092BD82 /* Main.storyboard in Resources */,

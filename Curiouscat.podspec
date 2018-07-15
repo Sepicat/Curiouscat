@@ -19,7 +19,8 @@ Pod::Spec.new do |s|
   s.license      = "GPL-3.0"
   s.author             = { "Harry Duan" => "gua@desgard.com" }
   s.source       = { :git => "https://github.com/Sepicat/Curiouscat.git" }
-  s.source_files  = "Curiouscat/Curiouscat/**/*.{swift,plist,js}"
+  s.source_files  = "Curiouscat/Curiouscat/**/*.{swift,plist}"
+  s.resource = "Curiouscat/Curiouscat/**/*.{js}"
   s.dependency 'SnapKit', '~> 4.0.0'
   s.dependency 'KVOController', '~> 1.2.0'
 

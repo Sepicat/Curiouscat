@@ -28,8 +28,7 @@ public class CuriousConfig {
     
     /// 根据类型获取注入 js 脚本
     static func loadUserScript(with type: PageType) -> WKUserScript? {
-        let bundle = Bundle(for: CuriousConfig.self)
-        guard let path = bundle.path(forResource: type.scriptName, ofType: "js") else {
+        guard let path = Bundle.main.path(forResource: type.scriptName, ofType: "js") else {
             return nil
         }
 
