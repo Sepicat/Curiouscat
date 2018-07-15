@@ -18,10 +18,10 @@ public class CuriousConfig {
     }
     
     public class Colors {
-        static var backColor: UIColor = UIColor(rgbString: "#3C3836")
-        static var textShowColor: UIColor = UIColor(rgbString: "#d5c4a1")
-        static var textLinkColor: UIColor = UIColor(rgbString: "#b8bb26")
-        static var textBlockQuoteColor: UIColor = UIColor(rgbString: "#d5c4a1")
+        static public var backColor: UIColor = UIColor(rgbString: "#3C3836")
+        static public var textShowColor: UIColor = UIColor(rgbString: "#d5c4a1")
+        static public var textLinkColor: UIColor = UIColor(rgbString: "#b8bb26")
+        static public var textBlockQuoteColor: UIColor = UIColor(rgbString: "#d5c4a1")
     }
     
     static let shared: CuriousConfig = CuriousConfig()
@@ -58,6 +58,14 @@ public class CuriousConfig {
             return .githubMarkdown
         }
         return .other
+    }
+
+    // reset 颜色主题，恢复 gruvbox
+    static func resetColors() {
+        Colors.backColor = UIColor(rgbString: "#3C3836")
+        Colors.textShowColor = UIColor(rgbString: "#d5c4a1")
+        Colors.textLinkColor = UIColor(rgbString: "#b8bb26")
+        Colors.textBlockQuoteColor = UIColor(rgbString: "#d5c4a1")
     }
 }
 
