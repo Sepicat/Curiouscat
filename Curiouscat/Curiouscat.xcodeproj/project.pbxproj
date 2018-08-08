@@ -197,7 +197,6 @@
 				D5B69BBE20B942670092BD82 /* Frameworks */,
 				D5B69BBF20B942670092BD82 /* Headers */,
 				D5B69BC020B942670092BD82 /* Resources */,
-				53682B5088D5A3E4D2ACE262 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,7 +216,6 @@
 				D5B69BCE20B943D40092BD82 /* Frameworks */,
 				D5B69BCF20B943D40092BD82 /* Resources */,
 				5AC8FC6DFC198EAC36182A4A /* [CP] Embed Pods Frameworks */,
-				97B8B0D893F4572453C56268 /* [CP] Copy Pods Resources */,
 				8417708B20DB6B2100174F90 /* CopyFiles */,
 			);
 			buildRules = (
@@ -327,21 +325,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		53682B5088D5A3E4D2ACE262 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Curiouscat/Pods-Curiouscat-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5AC8FC6DFC198EAC36182A4A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,21 +347,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CuriouscatSample/Pods-CuriouscatSample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		97B8B0D893F4572453C56268 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CuriouscatSample/Pods-CuriouscatSample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

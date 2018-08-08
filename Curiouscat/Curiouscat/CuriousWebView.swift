@@ -48,6 +48,9 @@ public class CuriousWebView: UIView {
         wkConfig.preferences = wkPreferences
 
         var webView = WKWebView.init(frame: .zero, configuration: wkConfig)
+        
+        webView.isOpaque = false
+        webView.backgroundColor = CuriousConfig.Colors.backColor
         webView.navigationDelegate = self
         return webView
     }()
@@ -137,6 +140,10 @@ extension CuriousWebView {
     
     public var canForward: Bool {
         get { return webView.canGoForward }
+    }
+    
+    public func load(url: URL) {
+        webView.load(URLRequest.init(url: url))
     }
 }
 
