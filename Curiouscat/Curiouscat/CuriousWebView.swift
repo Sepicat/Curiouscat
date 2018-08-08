@@ -25,6 +25,13 @@ public class CuriousWebView: UIView {
     /// 加载完之后带高度的回调
     public var loadEndCallback: (Float) -> Void = { _ in }
     
+    /// 是否可滑动
+    public var isScrollEnabled: Bool = true {
+        didSet {
+            webView.scrollView.isScrollEnabled = isScrollEnabled
+        }
+    }
+    
     /// 进度条颜色
     public var progressTintColor: UIColor = UIColor.blue {
         didSet {
