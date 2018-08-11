@@ -33,9 +33,23 @@ public class CuriousWebView: UIView {
     }
     
     /// 进度条颜色
-    public var progressTintColor: UIColor = UIColor.blue {
+    public var progressTrackTintColor: UIColor = UIColor.clear {
         didSet {
-            progressView.backgroundColor = progressTintColor
+            progressView.trackTintColor = progressTrackTintColor
+        }
+    }
+    
+    /// 进度条背景色
+    public var progressTintColor: UIColor = UIColor.clear {
+        didSet {
+            progressView.progressTintColor = progressTintColor
+        }
+    }
+    
+    /// 进度条透明度
+    public var progressAlpha: CGFloat = 1 {
+        didSet {
+            progressView.alpha = progressAlpha
         }
     }
     
@@ -65,7 +79,8 @@ public class CuriousWebView: UIView {
     
     lazy private var progressView: UIProgressView = {
         var progressView = UIProgressView()
-        progressView.backgroundColor = progressTintColor
+        progressView.progressTintColor = progressTintColor
+        progressView.trackTintColor = progressTintColor
         progressView.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.5)
         return progressView
     }()

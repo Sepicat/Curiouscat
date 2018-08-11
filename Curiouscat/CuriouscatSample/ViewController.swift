@@ -14,7 +14,10 @@ import SnapKit
 class ViewController: UIViewController {
     
     lazy private var demoWebView: CuriousWebView = {
-        return CuriousWebView.init(type: .githubMarkdown, url: "https://github.com/Desgard/iOS-Source-Probe/blob/master/README.md")
+        var webView = CuriousWebView.init(type: .githubMarkdown, url: "https://github.com/Desgard/iOS-Source-Probe/blob/master/README.md")
+        webView.progressTintColor = .white
+        webView.progressTrackTintColor = .black
+        return webView
     }()
 
     override func viewDidLoad() {
