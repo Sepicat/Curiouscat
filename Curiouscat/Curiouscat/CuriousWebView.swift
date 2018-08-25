@@ -25,6 +25,9 @@ public class CuriousWebView: UIView {
     /// 加载完之后带高度的回调
     public var loadEndCallback: (Float) -> Void = { _ in }
     
+    /// 第一次 load
+    private var firstLoad: Bool = true
+    
     /// 是否可滑动
     public var isScrollEnabled: Bool = true {
         didSet {
@@ -178,8 +181,8 @@ extension CuriousWebView: WKNavigationDelegate {
             return
         }
         let linkPageType = CuriousConfig.getUrlType(with: urlText)
-        if linkPageType == pageType {
-            print("Go to: \(urlText)")
+        if firstLoad {
+            firstLoad = false
         } else {
             webView.stopLoading()
             clickOtherLinks(linkPageType, urlText)
