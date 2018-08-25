@@ -16,14 +16,19 @@ var titleLabel = document.getElementsByClassName("breadcrumb blob-breadcrumb")[0
 var parentTitleLabel = titleLabel.parentElement;
 parentTitleLabel.removeChild(titleLabel);
 
+var backgroundColor = "%@";
+var textColor = "%@";
+var aColor = "%@";
+var blockquoteColor = "%@";
+
 // Style 样式修改
 /// 常规
 if (debug) {
     document.body.style.background = "#3C3836";
     document.body.style.color = "#d5c4a1";
 } else {
-    document.body.style.background = "%@"; // "#3C3836"
-    document.body.style.color = "%@"; // #d5c4a1"
+    document.body.style.background = backgroundColor; // "#3C3836"
+    document.body.style.color = textColor; // #d5c4a1"
 }
 
 /// a 标签
@@ -32,7 +37,7 @@ for (var i = 0; i < as.length; ++ i) {
     if (debug) {
         as[i].style.color = "#b8bb26";
     } else {
-        as[i].style.color = "%@"; // #b8bb26
+        as[i].style.color = aColor; // #b8bb26
     }
 }
 
@@ -54,6 +59,12 @@ for (var i = 0; i < blockquotes.length; ++ i) {
     if (debug) {
         blockquotes[i].style.color = "#d5c4a1";
     } else {
-        blockquotes[i].style.color = "%@"; // #d5c4a1"
+        blockquotes[i].style.color = blockquoteColor; // #d5c4a1"
     }
+}
+
+/// 修改 h2 下划线
+var h2 = document.getElementsByTagName("h2")
+for (var i = 0; i < h2.length; ++ i) {
+    h2[i].style.borderBottomColor = backgroundColor;
 }
