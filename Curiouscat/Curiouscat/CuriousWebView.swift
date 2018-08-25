@@ -15,10 +15,10 @@ public class CuriousWebView: UIView {
     
     private(set) var pageType: CuriousConfig.PageType
     
-    private(set) var rootUrl: String
+    public var rootUrl: String
     
     private let eps: Double = 1e-4
-
+    
     /// 点击非同类链接回调
     public var clickOtherLinks: ((CuriousConfig.PageType, String) -> Void) = { _,_ in }
     
@@ -70,7 +70,7 @@ public class CuriousWebView: UIView {
         
         wkConfig.userContentController = wkUserContentController
         wkConfig.preferences = wkPreferences
-
+        
         var webView = WKWebView.init(frame: .zero, configuration: wkConfig)
         
         webView.isOpaque = false
@@ -105,7 +105,7 @@ public class CuriousWebView: UIView {
         initialLayouts()
         load()
     }
-
+    
     private func initialViews() {
         addSubview(webView)
         addSubview(progressView)
@@ -137,8 +137,8 @@ public class CuriousWebView: UIView {
             make.height.equalTo(2)
         }
     }
-
-
+    
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -181,7 +181,7 @@ extension CuriousWebView: WKNavigationDelegate {
             return
         }
         let linkPageType = CuriousConfig.getUrlType(with: urlText)
-        if firstLoad {
+        if firstLoad || urlText == self.rootUrl {
             firstLoad = false
         } else {
             webView.stopLoading()
