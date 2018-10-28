@@ -64,7 +64,33 @@ for (var i = 0; i < blockquotes.length; ++ i) {
 }
 
 /// 修改 h2 下划线
-var h2 = document.getElementsByTagName("h2")
-for (var i = 0; i < h2.length; ++ i) {
-    h2[i].style.borderBottomColor = backgroundColor;
+var h2s = document.getElementsByTagName("h2");
+for (var i = 0; i < h2s.length; ++ i) {
+    if (debug) {
+        h2s[i].style.borderBottomColor = backgroundColor;
+    } else {
+        h2s[i].style.borderBottomColor = "#3C3836";
+    }
+}
+
+/// 修改 h1 下划线样式
+var h1s = document.getElementsByTagName("h1");
+for (var i = 0; i < h1s.length; ++ i) {
+    if (debug) {
+        h1s[i].style.borderBottomColor = backgroundColor;
+    } else {
+        h1s[i].style.borderBottomColor = "#3C3836";
+    }
+}
+
+/// 更换字体
+var articles = document.getElementsByTagName("article")
+for (var i = 0; i < articles.length; ++ i) {
+    articles[i].style = "font-family: GurmukhiMN;"
+}
+
+/// 切圆角
+var imgs = document.getElementsByTagName("img");
+for (var i = 0; i < imgs.length; ++ i) {
+    imgs[i].style = "border-radius: 6px;";
 }
