@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/Sepicat/Curiouscat.git" }
   s.source_files  = "Curiouscat/Curiouscat/**/*.{swift}"
   s.resource = "Curiouscat/Curiouscat/**/*.{js}"
-  s.dependency 'SnapKit', '~> 4.0.0'
+  s.dependency 'SnapKit', '~> 4.2.0'
   s.dependency 'KVOController', '~> 1.2.0'
 
 end
