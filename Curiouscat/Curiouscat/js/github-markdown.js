@@ -94,3 +94,9 @@ var imgs = document.getElementsByTagName("img");
 for (var i = 0; i < imgs.length; ++ i) {
     imgs[i].style = "border-radius: 6px;";
 }
+
+// 对于 bg-white 的处理
+tem = document.getElementsByClassName("bg-white")
+if (tem.length > 0) {
+    tem[0].className = "";
+}
