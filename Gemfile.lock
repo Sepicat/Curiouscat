@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: https://gems.ruby-china.com/
   specs:
     CFPropertyList (3.0.0)
     activesupport (4.2.10)
@@ -34,6 +34,8 @@ GEM
       nap (~> 1.0)
     cocoapods-deintegrate (1.0.2)
     cocoapods-downloader (1.2.1)
+    cocoapods-packager (1.5.0)
+      cocoapods (>= 1.1.1, < 2.0)
     cocoapods-plugins (1.0.0)
       nap
     cocoapods-search (1.0.0)
@@ -71,6 +73,7 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods (= 1.5.3)
+  cocoapods-packager
 
 BUNDLED WITH
    1.16.3

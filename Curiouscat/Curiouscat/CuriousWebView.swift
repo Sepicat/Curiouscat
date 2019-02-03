@@ -28,6 +28,9 @@ public class CuriousWebView: UIView {
     /// 第一次 load
     private var firstLoad: Bool = true
     
+    /// 高度反馈
+    private var heigthCache: Float = 0.0
+    
     /// 是否可滑动
     public var isScrollEnabled: Bool = true {
         didSet {
@@ -124,6 +127,19 @@ public class CuriousWebView: UIView {
                 }
             }
         }
+        
+        kvoController.observe(self.webView.scrollView, keyPath: "contentSize", options: .new) {
+            [weak self] _, _, _ in
+            guard let self = self else {
+                return
+            }
+            print(self.webView.scrollView.contentSize.height)
+            let height = Float(self.webView.scrollView.contentSize.height)
+            if fabs(height - self.heigthCache) > Float(self.eps) {
+                self.heigthCache = height
+                self.loadEndCallback(height)
+            }
+        }
     }
     
     private func initialLayouts() {
@@ -168,7 +184,7 @@ extension CuriousWebView {
     }
     
     public func load(url: URL) {
-        webView.load(URLRequest.init(url: url))
+        webView.load(URLRequest(url: url))
     }
 }
 
@@ -193,7 +209,10 @@ extension CuriousWebView: WKNavigationDelegate {
         webView.evaluateJavaScript("document.body.scrollHeight") { height, _ in
             if let height: Float = height as? Float {
                 print("height: \(height)")
-                self.loadEndCallback(height)
+                if fabs(height - self.heigthCache) > Float(self.eps) {
+                    self.heigthCache = height
+                    self.loadEndCallback(height)
+                }
             }
         }
     }

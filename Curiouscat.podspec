@@ -7,10 +7,8 @@
 #
 
 Pod::Spec.new do |s|
-
-
   s.name         = "Curiouscat"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "The GitHub README WebView."
   s.description  = <<-DESC
   Change the GitHub Markdown css style, to parse my theme.
@@ -21,7 +19,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/Sepicat/Curiouscat.git" }
   s.source_files  = "Curiouscat/Curiouscat/**/*.{swift}"
   s.resource = "Curiouscat/Curiouscat/**/*.{js}"
-  s.dependency 'SnapKit', '~> 4.2.0'
-  s.dependency 'KVOController', '~> 1.2.0'
-
+  s.dependency 'SnapKit'
+  s.dependency 'KVOController'
 end
