@@ -35,6 +35,9 @@ public class CuriousWebView: UIView {
     public var isScrollEnabled: Bool = true {
         didSet {
             webView.scrollView.isScrollEnabled = isScrollEnabled
+            webView.scrollView.isUserInteractionEnabled = isScrollEnabled
+            webView.scrollView.bounces = isScrollEnabled
+            webView.scrollView.bouncesZoom = isScrollEnabled
         }
     }
     
@@ -87,7 +90,7 @@ public class CuriousWebView: UIView {
         var progressView = UIProgressView()
         progressView.progressTintColor = progressTintColor
         progressView.trackTintColor = progressTintColor
-        progressView.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.5)
+        progressView.transform = CGAffineTransform(scaleX: 1.0, y: 1.5)
         return progressView
     }()
     
@@ -211,7 +214,7 @@ extension CuriousWebView: WKNavigationDelegate {
                 print("height: \(height)")
                 if fabs(height - self.heigthCache) > Float(self.eps) {
                     self.heigthCache = height
-                    self.loadEndCallback(height)
+                    self.loadEndCallback(height + 5)
                 }
             }
         }
