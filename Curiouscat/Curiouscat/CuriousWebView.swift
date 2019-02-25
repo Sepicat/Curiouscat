@@ -35,9 +35,6 @@ public class CuriousWebView: UIView {
     public var isScrollEnabled: Bool = true {
         didSet {
             webView.scrollView.isScrollEnabled = isScrollEnabled
-            webView.scrollView.isUserInteractionEnabled = isScrollEnabled
-            webView.scrollView.bounces = isScrollEnabled
-            webView.scrollView.bouncesZoom = isScrollEnabled
         }
     }
     
