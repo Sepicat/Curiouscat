@@ -21,4 +21,5 @@ Pod::Spec.new do |s|
   s.resource = "Curiouscat/Curiouscat/**/*.{js}"
   s.dependency 'SnapKit'
   s.dependency 'KVOController'
+  s.dependency 'Alamofire'
 end

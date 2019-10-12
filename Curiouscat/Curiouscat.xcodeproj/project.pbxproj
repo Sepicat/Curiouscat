@@ -3,15 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5CDEF33750D0D94C6D629325 /* Pods_CuriouscatSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8468C260C04ECCBDE779F12 /* Pods_CuriouscatSample.framework */; };
+		2B33DC342351CE1C003EB12F /* CuriousCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B33DC332351CE1C003EB12F /* CuriousCache.swift */; };
+		6849B9F646750164C82C14FB /* Pods_Curiouscat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61DFB428665FA21F91B412A /* Pods_Curiouscat.framework */; };
 		8417708C20DB6B3100174F90 /* Curiouscat.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D5B69BC220B942670092BD82 /* Curiouscat.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8446C5782185539400EC5190 /* github-markdown.js in Resources */ = {isa = PBXBuildFile; fileRef = 84AF6F2A20FB0FD7004F918E /* github-markdown.js */; };
 		8446C57B2185540B00EC5190 /* github-markdown.js in Resources */ = {isa = PBXBuildFile; fileRef = 8446C57A2185540A00EC5190 /* github-markdown.js */; };
-		AE76E015C361847F884316A0 /* Pods_Curiouscat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61DFB428665FA21F91B412A /* Pods_Curiouscat.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		86C5FDFB3A6698ECA609C77A /* Pods_CuriouscatSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDE2CC1436E719078F71266 /* Pods_CuriouscatSample.framework */; };
 		D50B87F320FADC58007FB840 /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50B87F220FADC58007FB840 /* UIColor+Helper.swift */; };
 		D5B69BC720B942670092BD82 /* Curiouscat.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B69BC520B942670092BD82 /* Curiouscat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5B69BD420B943D40092BD82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B69BD320B943D40092BD82 /* AppDelegate.swift */; };
@@ -48,11 +49,13 @@
 
 /* Begin PBXFileReference section */
 		06999B8FAA3A01D01E956490 /* Pods-CuriouscatSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuriouscatSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CuriouscatSample/Pods-CuriouscatSample.debug.xcconfig"; sourceTree = "<group>"; };
-		25FC457EACA93D014DC78A31 /* Pods-Curiouscat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Curiouscat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Curiouscat/Pods-Curiouscat.debug.xcconfig"; sourceTree = "<group>"; };
+		2B33DC332351CE1C003EB12F /* CuriousCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriousCache.swift; sourceTree = "<group>"; };
+		40232125A9DACCD686DF924A /* Pods-Curiouscat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Curiouscat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Curiouscat/Pods-Curiouscat.release.xcconfig"; sourceTree = "<group>"; };
 		4083EBA5F730AF7EE6C2576D /* Pods-CuriouscatSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuriouscatSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CuriouscatSample/Pods-CuriouscatSample.release.xcconfig"; sourceTree = "<group>"; };
-		5BA4929D5B49047C6FCB96BE /* Pods-Curiouscat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Curiouscat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Curiouscat/Pods-Curiouscat.release.xcconfig"; sourceTree = "<group>"; };
+		4667CFE9D3F69EF56001E5C7 /* Pods-Curiouscat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Curiouscat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Curiouscat/Pods-Curiouscat.debug.xcconfig"; sourceTree = "<group>"; };
 		8446C57A2185540A00EC5190 /* github-markdown.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "github-markdown.js"; path = "Curiouscat/js/github-markdown.js"; sourceTree = SOURCE_ROOT; };
 		84AF6F2A20FB0FD7004F918E /* github-markdown.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "github-markdown.js"; sourceTree = "<group>"; };
+		9EDE2CC1436E719078F71266 /* Pods_CuriouscatSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuriouscatSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61DFB428665FA21F91B412A /* Pods_Curiouscat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Curiouscat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D50B87F220FADC58007FB840 /* UIColor+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helper.swift"; sourceTree = "<group>"; };
 		D5B69BC220B942670092BD82 /* Curiouscat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Curiouscat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,7 +70,6 @@
 		D5B69BDF20B943D60092BD82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5B69BE620B992C60092BD82 /* CuriousWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriousWebView.swift; sourceTree = "<group>"; };
 		D5B69BE820B993E50092BD82 /* CuriousConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriousConfig.swift; sourceTree = "<group>"; };
-		D8468C260C04ECCBDE779F12 /* Pods_CuriouscatSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuriouscatSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE76E015C361847F884316A0 /* Pods_Curiouscat.framework in Frameworks */,
+				6849B9F646750164C82C14FB /* Pods_Curiouscat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CDEF33750D0D94C6D629325 /* Pods_CuriouscatSample.framework in Frameworks */,
+				86C5FDFB3A6698ECA609C77A /* Pods_CuriouscatSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,10 +103,10 @@
 		B38C2D19B6854008613532C0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				25FC457EACA93D014DC78A31 /* Pods-Curiouscat.debug.xcconfig */,
-				5BA4929D5B49047C6FCB96BE /* Pods-Curiouscat.release.xcconfig */,
 				06999B8FAA3A01D01E956490 /* Pods-CuriouscatSample.debug.xcconfig */,
 				4083EBA5F730AF7EE6C2576D /* Pods-CuriouscatSample.release.xcconfig */,
+				4667CFE9D3F69EF56001E5C7 /* Pods-Curiouscat.debug.xcconfig */,
+				40232125A9DACCD686DF924A /* Pods-Curiouscat.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -113,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				C61DFB428665FA21F91B412A /* Pods_Curiouscat.framework */,
-				D8468C260C04ECCBDE779F12 /* Pods_CuriouscatSample.framework */,
+				9EDE2CC1436E719078F71266 /* Pods_CuriouscatSample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -153,6 +155,7 @@
 				D50B87F120FADBC8007FB840 /* Helper */,
 				D5B69BC520B942670092BD82 /* Curiouscat.h */,
 				D5B69BE820B993E50092BD82 /* CuriousConfig.swift */,
+				2B33DC332351CE1C003EB12F /* CuriousCache.swift */,
 				D5B69BE620B992C60092BD82 /* CuriousWebView.swift */,
 				D5B69BC620B942670092BD82 /* Info.plist */,
 			);
@@ -191,7 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5B69BCA20B942670092BD82 /* Build configuration list for PBXNativeTarget "Curiouscat" */;
 			buildPhases = (
-				47C0E88BF1D5E60F738EE15B /* [CP] Check Pods Manifest.lock */,
+				C0049F1787A3C8DF5C132B76 /* [CP] Check Pods Manifest.lock */,
 				D5B69BBD20B942670092BD82 /* Sources */,
 				D5B69BBE20B942670092BD82 /* Frameworks */,
 				D5B69BBF20B942670092BD82 /* Headers */,
@@ -214,8 +217,8 @@
 				D5B69BCD20B943D40092BD82 /* Sources */,
 				D5B69BCE20B943D40092BD82 /* Frameworks */,
 				D5B69BCF20B943D40092BD82 /* Resources */,
-				5AC8FC6DFC198EAC36182A4A /* [CP] Embed Pods Frameworks */,
 				8417708B20DB6B2100174F90 /* CopyFiles */,
+				C4FDF74C941D69B0D3B39B60 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -306,16 +309,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		47C0E88BF1D5E60F738EE15B /* [CP] Check Pods Manifest.lock */ = {
+		C0049F1787A3C8DF5C132B76 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Curiouscat-checkManifestLockResult.txt",
 			);
@@ -324,28 +331,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5AC8FC6DFC198EAC36182A4A /* [CP] Embed Pods Frameworks */ = {
+		C4FDF74C941D69B0D3B39B60 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CuriouscatSample/Pods-CuriouscatSample-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CuriouscatSample/Pods-CuriouscatSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CuriouscatSample/Pods-CuriouscatSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CuriouscatSample/Pods-CuriouscatSample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CuriouscatSample/Pods-CuriouscatSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -358,6 +358,7 @@
 				D5B69BE920B993E50092BD82 /* CuriousConfig.swift in Sources */,
 				D5B69BE720B992C60092BD82 /* CuriousWebView.swift in Sources */,
 				D50B87F320FADC58007FB840 /* UIColor+Helper.swift in Sources */,
+				2B33DC342351CE1C003EB12F /* CuriousCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,7 +523,7 @@
 		};
 		D5B69BCB20B942670092BD82 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25FC457EACA93D014DC78A31 /* Pods-Curiouscat.debug.xcconfig */;
+			baseConfigurationReference = 4667CFE9D3F69EF56001E5C7 /* Pods-Curiouscat.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -550,7 +551,7 @@
 		};
 		D5B69BCC20B942670092BD82 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BA4929D5B49047C6FCB96BE /* Pods-Curiouscat.release.xcconfig */;
+			baseConfigurationReference = 40232125A9DACCD686DF924A /* Pods-Curiouscat.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";

@@ -79,6 +79,10 @@ public class CuriousWebView: UIView {
         webView.isOpaque = false
         webView.backgroundColor = CuriousConfig.Colors.backColor
         webView.navigationDelegate = self
+
+        webView.scrollView.alwaysBounceVertical = true
+        webView.scrollView.showsHorizontalScrollIndicator = false
+        webView.scrollView.bouncesZoom = false
         return webView
     }()
     
@@ -215,5 +219,12 @@ extension CuriousWebView: WKNavigationDelegate {
                 }
             }
         }
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+extension WKWebView {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return nil
     }
 }

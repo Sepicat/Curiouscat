@@ -1,20 +1,36 @@
-var debug = false;
+var debug = true;
 
-// 删除样式标签
 function removeTag(tagName) {
-    var tag = document.getElementsByTagName(tagName)[0];
-    var tagParent = tag.parentElement;
-    tagParent.removeChild(tag);
+    var tags = document.getElementsByTagName(tagName);
+    while (tags.length > 0) {
+        var tagParent = tags[0].parentElement;
+        tagParent.removeChild(tags[0]);
+    }
 };
+
+function removeClassName(className) {
+    var titleLabels = document.getElementsByClassName(className);
+    while (titleLabels.length > 0) {
+        var parentTitleLabel = titleLabels[0].parentElement;
+        parentTitleLabel.removeChild(titleLabels[0]);
+    }
+}
 
 removeTag('header');
 removeTag('nav');
-removeTag('footer');
+removeClassName('footer container-lg width-full p-responsive');
 
-// 删除 Title Label
-var titleLabel = document.getElementsByClassName("breadcrumb blob-breadcrumb")[0];
-var parentTitleLabel = titleLabel.parentElement;
-parentTitleLabel.removeChild(titleLabel);
+// 获取 Readme 结点
+var readme = document.getElementById("readme")
+// 获取 main 结点
+var main = document.getElementsByTagName("main")[0]
+
+while(main.childElementCount > 0) {
+    main.removeChild(main.lastChild);
+}
+
+main.appendChild(readme);
+
 
 var backgroundColor = "%@";
 var textColor = "%@";
@@ -100,3 +116,6 @@ tem = document.getElementsByClassName("bg-white")
 if (tem.length > 0) {
     tem[0].className = "";
 }
+
+
+

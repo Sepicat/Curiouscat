@@ -1,28 +1,25 @@
 PODS:
   - Alamofire (4.7.2)
-  - Kanna (4.0.0)
   - KVOController (1.2.0)
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.5)
-  - Kanna (~> 4.0.0)
-  - KVOController (~> 1.2.0)
-  - SnapKit (~> 4.0.0)
+  - Alamofire
+  - KVOController
+  - SnapKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
-    - Kanna
-    - KVOController
     - SnapKit
+  trunk:
+    - KVOController
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  Kanna: d5ae2a26472f7e7a474e7f36a9cd8aa2c8c63ad3
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 64df7be96a307917a164df3142eed897ccd7c49b
+PODFILE CHECKSUM: 15a3f43f0cb43fafbfaeca18bace06972d967607
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.3

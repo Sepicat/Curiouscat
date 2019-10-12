@@ -8,8 +8,11 @@
 
 import UIKit
 import WebKit
+import Alamofire
 
 public class CuriousConfig {
+    
+    static let SCRIPT_URL = "https://raw.githubusercontent.com/Sepicat/Curiouscat/master/Curiouscat/Curiouscat/js/github-markdown.js"
     
     public enum PageType: Int {
         case githubMarkdown
@@ -28,6 +31,18 @@ public class CuriousConfig {
     
     /// 根据类型获取注入 js 脚本
     static func loadUserScript(with type: PageType) -> WKUserScript? {
+        // 从网络获取注入 js 脚本
+        Alamofire.request(SCRIPT_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
+            .responseString { resp in
+                switch resp.result {
+                case .success(let script):
+                    print(script)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+        }
+        
+        // 本地降级注入逻辑
         guard let path = Bundle.main.path(forResource: type.scriptName, ofType: "js") else {
             return nil
         }
